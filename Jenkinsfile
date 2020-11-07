@@ -40,7 +40,7 @@ pipeline {
           export AWS_SECRET_ACCESS_KEY=\$(aws configure get default.aws_secret_access_key)
           echo \$AWS_SECRET_ACCESS_KEY
           export AWS_DEFAULT_REGION=us-east-2
-          echo \$AWS_DEFAULT_REGION'
+          echo \$AWS_DEFAULT_REGION
           sudo terraform init
           sudo terraform plan
           sudo terraform apply -auto-approve
