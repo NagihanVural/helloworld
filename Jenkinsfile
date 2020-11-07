@@ -35,9 +35,9 @@ pipeline {
         steps {
           echo "Deploy phase started..."
           sh """
-          terraform init
-          terraform plan
-          terraform apply -auto-approve
+          sudo terraform init
+          sudo terraform plan
+          sudo terraform apply -auto-approve
           """
         }
       }
