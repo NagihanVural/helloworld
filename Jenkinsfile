@@ -34,13 +34,13 @@ pipeline {
       stage ("DEPLOY") {
         steps {
           echo "Deploy phase started..."
-          sh 'export AWS_ACCESS_KEY_ID=\$(aws configure get default.aws_access_key_id)'
-          sh 'echo \$AWS_ACCESS_KEY_ID'
-          sh 'export AWS_SECRET_ACCESS_KEY=\$(aws configure get default.aws_secret_access_key)'
-          sh 'echo \$AWS_SECRET_ACCESS_KEY'
-          sh 'export AWS_DEFAULT_REGION=us-east-2'
-          sh 'echo \$AWS_DEFAULT_REGION'
           sh """
+          export AWS_ACCESS_KEY_ID=\$(aws configure get default.aws_access_key_id)
+          echo \$AWS_ACCESS_KEY_ID
+          export AWS_SECRET_ACCESS_KEY=\$(aws configure get default.aws_secret_access_key)
+          echo \$AWS_SECRET_ACCESS_KEY
+          export AWS_DEFAULT_REGION=us-east-2
+          echo \$AWS_DEFAULT_REGION'
           sudo terraform init
           sudo terraform plan
           sudo terraform apply -auto-approve
