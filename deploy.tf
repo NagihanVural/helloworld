@@ -1,6 +1,7 @@
 provider "aws" {
   version = "~> 2.0"
   region  = "us-east-2"
+  profile = "default"
 }
 
 # Providing a reference to our default VPC
