@@ -4,3 +4,4 @@
 venv
 Jenkinsfile
 Dockerfile
+deploy.tf
