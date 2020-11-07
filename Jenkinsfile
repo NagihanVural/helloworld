@@ -6,7 +6,7 @@ pipeline {
         echo "Clone phase started..."
         sh """
         hostname
-        git pull https://github.com/NagihanVural/hello-world.git
+        git pull https://github.com/NagihanVural/helloworld.git
         """
       }
     }
@@ -35,6 +35,7 @@ pipeline {
         steps {
           echo "Deploy phase started..."
           sh """
+          
           """
         }
       }
