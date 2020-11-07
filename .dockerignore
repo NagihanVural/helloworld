@@ -1,7 +1,9 @@
 .git
-.vscode
 .mypy_cache
+.terraform
 venv
 Jenkinsfile
 Dockerfile
 deploy.tf
+terraform.tfstate
+terraform.tfstate.backup
