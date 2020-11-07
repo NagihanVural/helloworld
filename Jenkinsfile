@@ -36,7 +36,8 @@ pipeline {
           echo "Deploy phase started..."
           sh """
           sudo terraform init
-          sudo AWS_PROFILE=default terraform plan
+          export AWS_PROFILE=default
+          sudo terraform plan
           sudo terraform apply -auto-approve
           """
         }
