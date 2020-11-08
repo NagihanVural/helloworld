@@ -109,7 +109,7 @@ resource "aws_lb_target_group" "target_group" {
   protocol    = "HTTP"
   target_type = "ip"
   vpc_id      = aws_default_vpc.default_vpc.id # Referencing the default VPC
-  depends_on = [aws_alb.test-lb-tf]
+  depends_on = [aws_alb.application_load_balancer]
 }
 
 resource "aws_lb_listener" "listener" {
@@ -127,7 +127,7 @@ resource "aws_ecs_service" "nagi_demo_service" {
   cluster         = aws_ecs_cluster.nagi_demo_cluster.id         # Referencing our created Cluster
   task_definition = aws_ecs_task_definition.nagi_demo_task.arn # Referencing the task our service will spin up
   launch_type     = "FARGATE"
-  desired_count   = 1 # Setting the number of containers to 3
+  desired_count   = 1 # Setting the number of containers to 1
 
   load_balancer {
     target_group_arn = aws_lb_target_group.target_group.arn # Referencing our target group
